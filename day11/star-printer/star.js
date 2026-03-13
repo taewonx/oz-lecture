@@ -1,30 +1,22 @@
-const STAR = "*";
+const maxStars = 10;
 
-const getPromptInput = () => {
-    let input;
-    let isNotValid = true;
-    
-    while (isNotValid) {
-        let inputStr = prompt("출력할 별 갯수를 입력하세요.")
-        input = Number(inputStr);
-        if(isNaN(input)) {
-            console.log('오류');
-            continue;
-        }
-        isNotValid = false;
+while (true) {
+    let input = prompt("Enter the number of stars (1-10)");
+    let count = Number(input);
+
+    if (isNaN(count) || count < 1 || count > maxStars) {
+        console.log("Invalid input! Enter a number between 1 and 10.");
+        continue;
+    } else {
+        printStars(count); 
+        break;
     }
-    return input;
 }
 
-function printStar(input) {
-    // 별찍기
-    let string = ""
-    for (let i = 0; i < input; i++) {
-        string = string + STAR;
-    }
-    console.log(input);
-    console.log(string);
+function printStars (count = 1) {
+    var stars = "";
+    for (let i = 0; i < count; i++) {
+        stars += "*";
 }
-
-const input = getPromptInput();
-printStar(input);
+console.log(stars);
+}

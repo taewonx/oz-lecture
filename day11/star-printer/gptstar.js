@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Day11</title>
-    </head>
-    <body>
-<script>
 const maxStars = 10;
 let input;
 var stars;
@@ -41,6 +33,3 @@ while (true) {
         continue;
     }
 }
-</script>
-    </body>
-</html>
