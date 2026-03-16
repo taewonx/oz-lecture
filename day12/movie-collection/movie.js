@@ -44,6 +44,8 @@ function printMovies(movies) {
 // 함수 출력
 printMovies(movies);
 
+// -----도전 과제-----
+
 // Nolan 감독의 영화 출력
 // 1. for문 으로 출력
 function nolanMovieFor(movies){
@@ -113,9 +115,55 @@ function nolanMovieFilter(movies) {
 nolanMovieFilter(movies);
 
 // 1. 평균 출판년도 계산
+const calculateAverageYear = function(movies) {
 
+    console.log("-----평균 출판년도 계산-----")
+
+    var count = movies.length
+    let total = 0
+
+    for (let movie of movies) {
+        total += movie.year;
+    }
+
+    const avg = total / count;
+    console.log(`평균 출판년도: ${avg}년`);
+}
+calculateAverageYear(movies);
 
 // 2. 가장 최신 영화 찾기
+const findNewestMovie = (movies) => {
 
+    console.log("-----최신 영화-----")
+    
+    let latest = movies[0];
+
+    for (let movie of movies) {
+
+        if (movie.year > latest.year) {
+            latest = movie;
+        }
+    }
+    console.log(`최신 영화: ${latest.title}, ${latest.year}`);
+}
+findNewestMovie(movies);
 
 // 3. ...rest 사용하여 여러 영화 객체 한번에 추가
+function addMovies(originalMovies, ...newMovies) {
+    console.log(newMovies);
+    return [...originalMovies, ...newMovies];
+}
+
+movies = addMovies(movies, 
+    {
+    title:"Whiplash",
+    director:"Chazelle",
+    year:2014,
+    genre:"Music",
+}, {
+    title:"Joker",
+    director:"Phillips",
+    year:2019,
+    genre:"Crime",
+}
+);
