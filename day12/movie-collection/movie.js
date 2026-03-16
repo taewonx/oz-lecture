@@ -93,7 +93,7 @@ function nolanMovieForOf(movies){
 }
 nolanMovieForOf(movies);
 
-// 4. filter()로 출력
+// 4. filter()로 출력 + 결과 없으면 문자 출력
 function nolanMovieFilter(movies) {
 
     console.log("-----Nolan Movies(filter)-----");
@@ -104,10 +104,18 @@ function nolanMovieFilter(movies) {
 
     // const nolanMovies = movies.filter((movie) => movie.director === "Nolan");
 
-    console.log(nolanMovies)
+    if (nolanMovies.length === 0) {
+        console.log("No Movies found for director: Noaln");
+    } else {
+        console.log(nolanMovies);
+    }
 }
 nolanMovieFilter(movies);
 
 // 1. 평균 출판년도 계산
+
+
 // 2. 가장 최신 영화 찾기
+
+
 // 3. ...rest 사용하여 여러 영화 객체 한번에 추가
