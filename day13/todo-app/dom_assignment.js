@@ -52,16 +52,21 @@ function addTask() {
 
 // 모든 할 일 삭제 함수
 function clearAllTasks() {
-    //for문, while문
+    taskList.innerHTML = "";
 }
 
 // 추가 버튼 클릭 이벤트 적용
+addButton.addEventListener('click', addTask);
 
 // 입력창에서 Enter 키 이벤트 적용 (event.key === 'Enter')
+taskInput.addEventListener('keydown', function(event){
+    if (event.key === 'Enter')
+    addTask();
+})
 
 
 // 전체 삭제 버튼 클릭 이벤트 적용
-
+clearButton.addEventListener('click', clearAllTasks);
 
 
 
