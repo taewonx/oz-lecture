@@ -13,25 +13,46 @@ function addTask() {
     const taskText = taskInput.value.trim();
 
     // 입력값이 비어있는지 확인
+    if (taskText === "") {
+        alert('할 일을 입력해주세요!');
+        return;
+    }
 
     // 새로운 리스트 아이템 생성
+    const li = document.createElement('li');
+    li.classList.add("task-item");
 
     // 할 일 텍스트 추가
+    const span = document.createElement('span');
+    span.textContent = taskText;
 
     // 삭제 버튼 생성
+    const delBtn = document.createElement('button');
+    delBtn.textContent = "삭제";
+    delBtn.classList.add("delete-button");
 
     // 삭제 버튼 이벤트 리스너
+    delBtn.addEventListener('click', function (){
+        taskList.removeChild(li);
+    });
 
     // 완료 상태 토글 이벤트 리스너
+    span.addEventListener('click', function(){
+        span.classList.toggle('completed');
+    });
 
     // 요소 조립
+    li.appendChild(span);
+    li.appendChild(delBtn);
+    taskList.appendChild(li);
 
     // 입력창 초기화
+    taskInput.value = "";
 }
 
 // 모든 할 일 삭제 함수
 function clearAllTasks() {
-
+    //for문, while문
 }
 
 // 추가 버튼 클릭 이벤트 적용
@@ -40,4 +61,7 @@ function clearAllTasks() {
 
 
 // 전체 삭제 버튼 클릭 이벤트 적용
+
+
+
 
