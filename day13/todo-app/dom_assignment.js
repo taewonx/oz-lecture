@@ -67,6 +67,3 @@ taskInput.addEventListener('keydown', function(event){
 
 // 전체 삭제 버튼 클릭 이벤트 적용
 clearButton.addEventListener('click', clearAllTasks);
-
-
-
