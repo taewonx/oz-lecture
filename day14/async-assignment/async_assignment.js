@@ -10,6 +10,7 @@ const resetTimerInput = () => {
 const resetTimerDisp = () => {
     // timerDisplay 초기화
     timerDisplay.textContent = "";
+    timerDisplay.classList.remove('error');
 };
 
 const showTimerSec = (sec) => {
@@ -39,12 +40,11 @@ const processTimer = (sec) => {
     // 1초마다 sec 감소,
     sec -= 1;
     // sec이 0보다 크면 sec 표시
-    if (sec < 0) {
+    if (sec <= 0) {
       clearInterval(timer);
       // 타이머 종료 메세지 표시
       showTimerComplete();
     } else {
-        resetTimerDisp();
         showTimerSec(sec);
     }
   }, 1000);
@@ -56,7 +56,7 @@ function handleClickTimer() {
     // timer input에서 sec 가져오기
     let check = timerInput.value;
     check = Number(check);
-    if (check < 1 || check > 10 || isNaN(check) || check === "") {
+    if (check < 1 || check > 10 || isNaN(check)) {
         showTimerError();
     } else {
         processTimer(check);
