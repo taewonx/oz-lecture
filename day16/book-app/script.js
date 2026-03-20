@@ -21,7 +21,6 @@ function addBook() {
     // 대여 상태 클로저 객체 생성 및 저장
     const rental = createBookRental(title);
     rentals.push(rental);
-    console.log(rental)
 
     const bookList = document.getElementById('bookList');
     const li = document.createElement('li');
@@ -129,7 +128,6 @@ function toggleRental(button) {
     if (!rental) return;    
 
     const status = rental.getStatus();
-    console.log(status)
     // TODO(도전과제) : books에서 title과 동일한 요소 찾기
     const book = books.find(b => b.title === title);
     if (status.isBorrowed) {
