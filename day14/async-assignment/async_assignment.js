@@ -52,19 +52,14 @@ const processTimer = (sec) => {
 
 // 타이머 시작
 function handleClickTimer() {
-  try {
     // timer input에서 sec 가져오기
-    let check = timerInput.value;
-    check = Number(check);
-    if (check < 1 || check > 10 || isNaN(check)) {
+    const sec = timerInput.value
+    const secNum = Number(sec);
+    if (secNum < 1 || secNum > 10 || isNaN(secNum)) {
         showTimerError();
+        resetTimerInput();
     } else {
-        processTimer(check);
+        processTimer(secNum);
     }
-  } catch (error) {
-    // 오류 메세지 출력
-    showTimerError(error.message);
-    resetTimerInput();
-  }
 }
 startTimer.addEventListener('click', handleClickTimer);
