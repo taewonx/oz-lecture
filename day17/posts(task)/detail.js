@@ -16,6 +16,7 @@ async function displayPostDetail() {
         };
         let post = await response.json();
         // localStorage에서 캐시 확인 (도전 과제)
+        
         // localStorage에서 캐시가 조건에 충족하면 캐시 사용하여 post 초기화 (도전 과제)
         // localStorage에서 캐시가 조건에 충족하지 않으면 상세 데이터 fetch하여 post 초기화 
 
@@ -34,7 +35,6 @@ function renderPost(post) {
         <h3>${post.title}</h3>
         <p>${post.body}</p>
     `;
-    console.log(post);
 }
 
 // 페이지 로드 시 포스트 상세 정보 표시
